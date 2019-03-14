@@ -269,7 +269,7 @@ when you want to run some code, throw an error, check `stdout`.
 ---
 # Custom Matchers
 
-when all else fit.
+when all else fits.
 
 ``` ruby
   RSpec::Matchers.define :a_named_fish  do |name|
