@@ -21,6 +21,8 @@ Facilitate writing tests in a language that is easily understood.
 
 Help describe how code should behave, and not how it's implemented.
 
+`it('marks the listings as sold')` instead of `it('listings.sold equals false')`
+
 ---
 
 ## Anatomy of a Spec
@@ -267,7 +269,7 @@ when you want to run some code, throw an error, check `stdout`.
 ---
 # Custom Matchers
 
-when all else is lost.
+when all else fit.
 
 ``` ruby
   RSpec::Matchers.define :a_named_fish  do |name|
