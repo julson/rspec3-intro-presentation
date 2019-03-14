@@ -35,7 +35,7 @@ class: middle, left
 
 ## What happens when I run it?
 
-.code_image[![output](public/rspec_output.png)]
+![output](public/rspec_output.png)
 
 ---
 class: middle, left
