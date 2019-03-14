@@ -4,8 +4,25 @@ class: center, middle
 
 ![logo](public/rspec_logo.png)
 
+???
+* welcome
+* talk about what specs are
+* setting up and running tests
+* organizing tests (sharing)
+* expectations
+
 ---
-class: middle, left
+class: middle, center
+## So what is it?
+
+RSpec is a behaviorial-driven style testing framework for ruby.
+
+Facilitate writing tests in a language that is easily understood.
+
+Help describe how code should behave, and not how it's implemented.
+
+---
+
 ## Anatomy of a Spec
 ``` ruby
 RSpec.describe 'A Fish', :fast do
@@ -31,15 +48,11 @@ end
 ```
 
 ---
-class: middle, left
-
 ## What happens when I run it?
 
 ![output](public/rspec_output.png)
 
 ---
-class: middle, left
-
 ## Running Specs
 
 There are several ways.
@@ -58,13 +71,11 @@ rspec --only-failures
 rspec --tag fast
 ```
 
-
 2) Through Bundler (`bundle exec rspec`) or Rake (`rake spec`)
 
 3) Check your favorite editor!
 
 ---
-class: middle, left
 ## Hooks
 For setting up / tearing down tests.
 
@@ -91,8 +102,6 @@ You can also set up hooks for the entire test suite.
 ```
 
 ---
-class: middle, left
-
 ## Helpers
 
 `let` and `let!` are memoized helper methods that are cached for every test but not across tests.
@@ -122,8 +131,6 @@ class: middle, center
 # Organizing Specs
 
 ---
-class: middle, left
-
 ## Configuration
 
 It's ~~all~~ mostly in `spec/support/*`
@@ -145,8 +152,6 @@ Example:
 ```
 
 ---
-class: middle, left
-
 ## Sharing Tests
 
 ``` ruby
@@ -166,8 +171,6 @@ class: middle, left
 ```
 
 ---
-class: middle, left
-
 ## Sharing Setup Code
 
 ``` ruby
@@ -190,8 +193,6 @@ class: middle, center
 
 # EXPECTATIONS!
 ---
-class: middle, left
-
 ## Expectation
 
 Used to specify expected outcomes.
@@ -208,9 +209,8 @@ Example:
 ``` ruby
 expect(listings.count).to eq(5), 'not enough stuff'
 ```
----
-class: middle, left
 
+---
 ## Primitive Matchers
 
 when you want to check if 2 things are the same.
@@ -230,9 +230,8 @@ when you want to check if 2 things are the same.
 
   expect(:foo).to statisfy { |value| value.is_a?(Symbol) }
 ```
----
-class: middle, left
 
+---
 ## Higher-Order Matchers
 
 when you want to compose different matchers.
@@ -248,9 +247,8 @@ when you want to compose different matchers.
     a_string_starting_with('sm')
   )
 ```
----
-class: middle, left
 
+---
 # Block Matchers
 
 when you want to run some code, throw an error, check `stdout`.
@@ -267,8 +265,6 @@ when you want to run some code, throw an error, check `stdout`.
 ```
 
 ---
-class: middle, left
-
 # Custom Matchers
 
 when all else is lost.
@@ -288,11 +284,9 @@ when all else is lost.
 ---
 class: middle, center
 
-# RSpec Rails
+# RSpec and Rails
 
 ---
-class: middle, left
-
 ## Types of Specs supported by rspec-rails
 
 * **:feature** - tests the entire app, including UI
