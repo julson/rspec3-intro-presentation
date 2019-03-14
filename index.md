@@ -6,10 +6,12 @@ class: center, middle
 
 ???
 * welcome
+* overview on what's possible
 * talk about what specs are
 * setting up and running tests
 * organizing tests (sharing)
 * expectations
+* **not talk about** mocks, spies and stubs
 
 ---
 class: middle, center
@@ -49,10 +51,26 @@ RSpec.describe 'A Fish', :fast do
 end
 ```
 
+???
+* example groups, names and class names
+* metadata and tags
+* let is a helper method
+* example represents behavior
+* expectations whether values are true
+* matchers allow you to compare values
+* context is similar to describe
+* before is a hook to set up tests
+* you can also skip tests
+
 ---
 ## What happens when I run it?
 
 ![output](public/rspec_output.png)
+
+???
+* displays successful, failed, skipped tests
+* reads more like a product specification
+* keeps track of test performance and return the slowest tests
 
 ---
 ## Running Specs
@@ -76,6 +94,10 @@ rspec --tag fast
 2) Through Bundler (`bundle exec rspec`) or Rake (`rake spec`)
 
 3) Check your favorite editor!
+
+???
+* grailed configured to run through bundle
+* emacs has `rspec_mode`
 
 ---
 ## Hooks
@@ -103,6 +125,11 @@ You can also set up hooks for the entire test suite.
   end
 ```
 
+???
+* accepts a block
+* arguments in hook determine when it runs
+* configure hooks to run on all tests in suite
+
 ---
 ## Helpers
 
@@ -127,6 +154,12 @@ and import them into your own tests
     # some tests
   end
 ```
+
+???
+* let is evaluated lazily
+* let! gets executed right away
+* you notice that you're parsing JSON every time and pulling out the same data
+
 ---
 class: middle, center
 
@@ -153,6 +186,11 @@ Example:
   end
 ```
 
+???
+* support has shared examples, helpers
+* spec_helper is the entry point
+* rspecs looks at `.rspec` in project dir
+
 ---
 ## Sharing Tests
 
@@ -172,6 +210,10 @@ Example:
   end
 ```
 
+???
+* include_examples
+* it_behaves_like is an alias
+
 ---
 ## Sharing Setup Code
 
@@ -187,8 +229,13 @@ Example:
 
   RSpec.describe 'POST /api/users/ban', type: :request do
     include_context 'authenticated', :team_member
+
+    # tests that ban users
   end
 ```
+
+???
+* you've been writing a lot of team member routes
 
 ---
 class: middle, center
@@ -233,6 +280,10 @@ when you want to check if 2 things are the same.
   expect(:foo).to statisfy { |value| value.is_a?(Symbol) }
 ```
 
+???
+* matchers that are prefixed with `be_` look for equivalent predicate methods
+* satisfy to create your own
+
 ---
 ## Higher-Order Matchers
 
@@ -250,6 +301,11 @@ when you want to compose different matchers.
   )
 ```
 
+???
+* include checks collections and hashes
+* contains_exactly
+* make it complicated
+
 ---
 # Block Matchers
 
@@ -265,6 +321,10 @@ when you want to run some code, throw an error, check `stdout`.
 
   expect { print 'Hello' }.to output('Hello').to_stdout
 ```
+
+???
+* check for side-effects
+* change after a method call
 
 ---
 # Custom Matchers
@@ -282,6 +342,11 @@ when all else fits.
 
   expect(fish).to be_a_fish_named('Nemo')
 ```
+
+???
+* not for everything
+* for complicated conditions
+* alias to make it readable
 
 ---
 class: middle, center
@@ -306,6 +371,10 @@ Also adds new matchers like:
 * `have_http_status(404)`
 
 * `redirect_to('https://www.register-grailed.com')`
+
+???
+* type metadata
+* different setup code for each
 
 ---
 class: middle, center
