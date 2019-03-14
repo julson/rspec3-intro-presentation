@@ -1,0 +1,14 @@
+{
+  "name": "rspec3-presentation",
+  "version": "1.0.0",
+  "description": "## Overview of RSpec 3",
+  "scripts": {
+    "start": "live-server ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.1.0"
+  }
+}
